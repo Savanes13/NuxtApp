@@ -31,3 +31,5 @@ interface ISlide {
 }
 
 export type TSlidesArray = ISlide[];
+
+

@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import AdvantagesBlock from '~/components/shared/element/AdvantagesBlock.vue';
 import MainSlider from '~/components/shared/element/MainSlider.vue';
+import Projectitem from '~/components/shared/element/Projectitem.vue';
 import { getAdvantageData, getProjectsData, getSliderData } from '~/api/pages/index/apiIndex';
 import type { TAdvantagesArray } from '~/types/pages/index/typesIndex';
 import type { TSlidesArray } from '~/types/pages/index/typesIndex';
@@ -45,6 +46,7 @@ getSlider();
 const getProject = async () => {
   try {
     const response = await getProjectsData();
+    dataProjectsArray.value = response;
   } catch (error) {
     console.log("ошибка при получении проектов", error);
   };
@@ -55,7 +57,7 @@ getProject();
 <template>
   <div 
     class="index-page"
-    v-if="dataAdvantagesArray && dataSliderArray"
+    v-if="dataAdvantagesArray && dataSliderArray && dataProjectsArray"
   >
     <div class="index-page__slider-block">
       <MainSlider
@@ -73,6 +75,24 @@ getProject();
           :image="item.icon"
           :title="item.title"
           :text="item.description"
+        />
+      </div>
+    </div>
+    <div class="index-page__projects-block">
+      <div class="title-projects">
+        <p>Проекты</p>
+      </div>
+      <div class="items-projects">
+        <Projectitem
+          v-for="project in dataProjectsArray"
+          :key="project.id"
+          :index="project.id"
+          :image="project.photos[0].name"
+          :catalog="project.photos[0].catalog"
+          :customer="project.customer"
+          :title="project.title"
+          :works-type="project.works"
+          :slug="project.slug"
         />
       </div>
     </div>
@@ -103,6 +123,20 @@ getProject();
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 32px;
+}
+
+.items-projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.title-projects {
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 97%;
+  margin-bottom: 90px;
+  color: color.$main_white;
 }
 
 :global(.swiper-pagination-bullet) {
