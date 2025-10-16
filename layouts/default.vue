@@ -8,10 +8,7 @@ import { navIcons } from '~/components/shared/icons/navIcons';
 
 <template>
   <div class="layout">
-
-
     <div class="layout__navbar">
-
       <div class="navbar-contacts">
         <div class="navbar-contacts__item">
           <div>
@@ -104,8 +101,6 @@ import { navIcons } from '~/components/shared/icons/navIcons';
       </div>
     </div>
 
-
-
     <div class="layout__slot">
       <slot></slot>
     </div>
@@ -135,7 +130,7 @@ import { navIcons } from '~/components/shared/icons/navIcons';
         </div>
       </div>
       <div class="footer-block">
-        <div class="footer-block__company-title">
+        <div class="footer-block__title">
           <p>Компания</p>
         </div>
         <div class="footer-block__pages-items">
@@ -154,7 +149,7 @@ import { navIcons } from '~/components/shared/icons/navIcons';
         </div>
       </div>
       <div class="footer-block">
-        <div class="footer-block__company-title">
+        <div class="footer-block__title">
           <p>Каталог</p>
         </div>
         <div class="footer-block__pages-items">
@@ -175,11 +170,64 @@ import { navIcons } from '~/components/shared/icons/navIcons';
           </div>
         </div>
       </div>
+
       <div class="footer-block">
-        
+        <div class="footer-block__title">
+          <p>Контакты</p>
+        </div>
+        <div class="footer-block__contacts">
+          <div class="contacts-item">
+            <div>
+              <span
+                class="svg"
+                v-html="navIcons['phone']"
+              ></span>
+            </div>
+            <div>
+              <p>+7 (391) 209 57-57</p>
+            </div>
+          </div>
+          <div class="contacts-item">
+            <div>
+              <span
+                class="svg"
+                v-html="navIcons['phone']"
+              ></span>
+            </div>
+            <div>
+              <p>+7 (391) 215 54-33</p>
+            </div>
+          </div>
+          <div class="contacts-item contacts-item--dash">
+            <div>
+              <span
+                class="svg"
+                v-html="navIcons['email']"
+              ></span>
+            </div>
+            <div>
+              <p>los-bio@mail.ru</p>
+            </div>
+          </div>
+          <div class="contacts-item contacts-item--dash">
+            <div>
+              <span
+                class="svg"
+                v-html="navIcons['back']"
+              ></span>
+            </div>
+            <div>
+              <p>Заказать звонок</p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-button">
+          <DefaultButton>
+            Получить КП
+          </DefaultButton>
+        </div>
       </div>
     </div>
-
   </div>
 </template>
 
@@ -298,7 +346,7 @@ position: relative;
   color: #FFFFFF54;
 }
 
-.footer-block__company-title {
+.footer-block__title {
   font-weight: 600;
   font-size: 18px;
   line-height: 141%;
@@ -319,6 +367,34 @@ position: relative;
   line-height: 141%;
   color: color.$main_white;
   cursor: pointer;
+}
+
+.footer-block__contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+.contacts-item {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 141%;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  color: color.$main_white;
+  cursor: pointer;
+}
+
+.contacts-item--dash div:nth-child(2){
+  border-bottom: 1px solid color.$main_white;
+}
+
+.footer-button .button{
+  width: 137px;
+  height: 36px;
+  border-radius: 4px;
 }
 
 
