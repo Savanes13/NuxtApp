@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import BreadCrumbs from '~/components/shared/element/BreadCrumbs.vue';
+import PhotosBlock from '~/components/shared/element/PhotosBlock.vue';
 import { getProjectData } from '~/api/pages/project/apiProject';
 
 const route = useRoute();
@@ -36,7 +37,10 @@ getProjectDataArr();
 </script>
 
 <template>
-  <div class="project-page">
+  <div
+    class="project-page"
+    v-if="dataProjectArray"
+  >
     <BreadCrumbs
       class="bread-crumbs"
       :data="breadCrumb"
@@ -47,7 +51,9 @@ getProjectDataArr();
       </div>
 
       <div class="image-block">
-        
+        <PhotosBlock
+          :photos="dataProjectArray.photos"
+        />
       </div>
 
     </div>
