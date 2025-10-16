@@ -1,8 +1,9 @@
 <script lang="ts" setup>
+import DefaultButton from '~/components/shared/ui/button/DefaultButton.vue';
+
+import { mainIcons } from '~/components/shared/icons/mainIcons';
 import { mainLogo } from '~/components/shared/icons/mainLogo';
 import { navIcons } from '~/components/shared/icons/navIcons';
-
-
 </script>
 
 <template>
@@ -76,26 +77,29 @@ import { navIcons } from '~/components/shared/icons/navIcons';
           ></span>
         </div>
         <div class="navbar-body__items">
-          <div>
+          <div class="page-item">
             <p>О компании</p>
           </div>
-          <div>
+          <div class="page-item">
             <p>Проекты</p>
           </div>
-          <div>
+          <div class="page-item">
             <div>
               <p>Каталог</p>
             </div>
             <span
-
+              class="svg"
+              v-html="mainIcons['arrowBottom']"
             ></span>
           </div>
-          <div>
+          <div class="page-item">
             <p>Контакты</p>
           </div>
         </div>
         <div class="navbar-body__consultation">
-
+          <DefaultButton>
+            Получить КП
+          </DefaultButton>
         </div>
       </div>
     </div>
@@ -130,13 +134,47 @@ import { navIcons } from '~/components/shared/icons/navIcons';
 }
 
 .navbar-contacts__item {
-  font-weight: 00;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 141%;
   display: flex;
   align-items: center;
   gap: 3px;
   color: color.$main_white;
+  cursor: pointer;
 }
 
+.navbar-body {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 135px;
+  align-items: center;
+  height: 96px;
+}
+
+.navbar-body__items {
+  display: flex;
+  gap: 56px;
+}
+
+.navbar-body__consultation .button{
+  width: 122px;
+  height: 36px;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 141%;
+}
+
+.page-item {
+  display: flex;
+  gap: 6px;
+  font-weight: 400px;
+  color: color.$main_white;
+
+  font-size: 16px;
+  line-height: 141%;
+}
 
 .layout__slot {
   margin: 0px 135px;
