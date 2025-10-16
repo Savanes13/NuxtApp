@@ -1,8 +1,10 @@
 <script lang="ts" setup>
 import AdvantagesBlock from '~/components/shared/element/AdvantagesBlock.vue';
-import { getAdvantageData } from '~/api/pages/index/apiIndex';
+import { getAdvantageData, getSliderData } from '~/api/pages/index/apiIndex';
 import type { TAdvantagesArray } from '~/types/pages/index/typesIndex';
+import type { TSlidesArray } from '~/types/pages/index/typesIndex';
 
+const dataSliderArray = ref<TSlidesArray | null>(null);
 const dataAdvantagesArray = ref<TAdvantagesArray | null>(null);
 
 const getAdvantages = async () => {
@@ -20,6 +22,21 @@ const getAdvantages = async () => {
   };
 };
 getAdvantages();
+
+const getSlider = async () => {
+  try {
+     const response = await getSliderData();
+    const slides = response.map((item: any) => ({
+      id: item.id,
+      name: item.name,
+      ...JSON.parse(item.value)
+    }));
+    console.log(slides)
+  } catch (error) {
+    console.log("ошибка при получении слайдера", error);
+  };
+};
+getSlider();
 </script>
 
 <template>
