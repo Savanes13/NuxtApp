@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import AdvantagesBlock from '~/components/shared/element/AdvantagesBlock.vue';
+import SliderItem from '~/components/shared/element/SliderItem.vue';
 import { getAdvantageData, getSliderData } from '~/api/pages/index/apiIndex';
 import type { TAdvantagesArray } from '~/types/pages/index/typesIndex';
 import type { TSlidesArray } from '~/types/pages/index/typesIndex';
@@ -31,6 +32,7 @@ const getSlider = async () => {
       name: item.name,
       ...JSON.parse(item.value)
     }));
+    dataSliderArray.value = slides;
     console.log(slides)
   } catch (error) {
     console.log("ошибка при получении слайдера", error);
@@ -42,7 +44,7 @@ getSlider();
 <template>
   <div 
     class="index-page"
-    v-if="dataAdvantagesArray"
+    v-if="dataAdvantagesArray && dataSliderArray"
   >
     
     <div class="index-page__advantages-block">
@@ -60,6 +62,15 @@ getSlider();
       </div>
     </div>
 
+    <SliderItem
+      v-for="item in dataSliderArray"
+      :key="item.id"
+      :image="item.image[0]?.name || ''"
+      :title="item.title"
+      :text="item.description"
+      :btn-text="item.btnText"
+      :catalog="item.image[0]?.catalog || ''"
+    />
   </div>
 </template>
 
