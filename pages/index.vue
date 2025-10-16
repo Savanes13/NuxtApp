@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import AdvantagesBlock from '~/components/shared/element/AdvantagesBlock.vue';
 import SliderItem from '~/components/shared/element/SliderItem.vue';
-import { getAdvantageData, getSliderData } from '~/api/pages/index/apiIndex';
+import { getAdvantageData, getProjectsData, getSliderData } from '~/api/pages/index/apiIndex';
 import type { TAdvantagesArray } from '~/types/pages/index/typesIndex';
 import type { TSlidesArray } from '~/types/pages/index/typesIndex';
 import { Swiper, SwiperSlide } from 'swiper/vue'
@@ -12,6 +12,8 @@ import 'swiper/css/autoplay'
 
 const dataSliderArray = ref<TSlidesArray | null>(null);
 const dataAdvantagesArray = ref<TAdvantagesArray | null>(null);
+// Типизировать
+const dataProjectsArray = ref<any | null>(null);
 
 const getAdvantages = async () => {
   try {
@@ -44,6 +46,15 @@ const getSlider = async () => {
   };
 };
 getSlider();
+
+const getProject = async () => {
+  try {
+    const response = await getProjectsData();
+  } catch (error) {
+    console.log("ошибка при получении проектов", error);
+  };
+};
+getProject();
 </script>
 
 <template>
