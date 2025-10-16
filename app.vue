@@ -11,6 +11,6 @@
 
 .app {
   font-family: font.$font-Gilroy;
-  // min-height: 100dvh;
+  min-height: 100dvh;
 }
 </style>

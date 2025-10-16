@@ -111,7 +111,40 @@ import { navIcons } from '~/components/shared/icons/navIcons';
     </div>
 
     <div class="layout__footer">
-      fdfdfd
+
+      <div class="footer-block">
+        <div class="footer-block__logo">
+          <span
+            v-html="mainLogo['logo']"
+          ></span>
+        </div>
+        <div class="name-company">
+          <p>ООО «ТОРГОВЫЙ ДОМ «ЛОС-БИО»</p>
+        </div>
+        <div class="company-details">
+          <div>
+            <div class="company-details__item">
+              <p><span>ИНН: </span>2463123719</p>
+            </div>
+            <div class="company-details__item">
+              <p><span>КПП: </span>246301001</p>
+            </div>
+          </div>
+          <div class="company-details__item">
+            <p><span>ОГРН: </span>1212400008688</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-block">
+        
+      </div>
+      <div class="footer-block">
+        
+      </div>
+      <div class="footer-block">
+        
+      </div>
     </div>
 
   </div>
@@ -119,6 +152,13 @@ import { navIcons } from '~/components/shared/icons/navIcons';
 
 <style lang="scss" scoped>
 @use "@/style/variables/color.scss" as color;
+
+.layout {
+  display: flex;
+  flex-direction: column;
+min-height: 100dvh;
+position: relative;
+}
 
 .layout__navbar {
 
@@ -183,8 +223,44 @@ import { navIcons } from '~/components/shared/icons/navIcons';
 
 
 
+
+
 .layout__footer {
   background: linear-gradient(187.91deg, #090B1A 10.06%, #060B17 90.18%);
+  flex: 0 0 auto;
+  margin-top: auto;
+  padding: 89px 135px;
+}
+
+.footer-block__logo {
+  margin-bottom: 30px;
+}
+
+.name-company {
+  color: color.$main_white;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 141%;
+  margin-bottom: 12px;
+}
+
+.company-details > div:first-child {
+  display: flex;
+  gap: 12px;
+}
+
+.company-details__item {
+  color: color.$main_white;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 164%;
+}
+
+.company-details__item span {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 164%;
+  color: #FFFFFF54;
 }
 
 
