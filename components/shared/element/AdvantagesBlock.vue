@@ -30,6 +30,7 @@ const {
 
 <style lang="scss" scoped>
 @use "@/style/variables/color.scss" as color;
+@use "@/style/variables/transition.scss" as transition;
 
 .advantages-block {
   width: 100%;
@@ -38,10 +39,18 @@ const {
   background: #121F2380;
   border: 2px solid #121F2380;
   border-radius: 19px;
+  transition: background-color transition.$medium;
 }
 
-.advantages-block__title-block {
+.advantages-block:hover {
+  background: #21343a80;
+} 
 
+.advantages-block__title-block {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 15px
 }
 
 .advantages-block__text-block {

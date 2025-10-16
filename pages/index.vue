@@ -42,5 +42,9 @@ getAdvantages();
 </template>
 
 <style scoped>
-
+.index-page__advantages-block {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
 </style>
