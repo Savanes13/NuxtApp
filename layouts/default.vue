@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { mainLogo } from '~/components/shared/icons/mainLogo';
 import { navIcons } from '~/components/shared/icons/navIcons';
 
 
@@ -10,24 +11,93 @@ import { navIcons } from '~/components/shared/icons/navIcons';
 
     <div class="layout__navbar">
 
-    <div class="navbar-contacts">
-      <div class="navbar-contacts__item">
-        <div>
-          <span
-            class="svg"
-            v-html="navIcons['point']"
-          ></span>
+      <div class="navbar-contacts">
+        <div class="navbar-contacts__item">
+          <div>
+            <span
+              class="svg"
+              v-html="navIcons['point']"
+            ></span>
+          </div>
+          <div>
+            <p>г. Красноярск, ул. Телевизорная 1, стр. 14, оф. 204</p>
+          </div>
         </div>
-        <div>
-          <p>г. Красноярск, ул. Телевизорная 1, стр. 14, оф. 204</p>
+        <div class="navbar-contacts__item">
+          <div>
+            <span
+              class="svg"
+              v-html="navIcons['phone']"
+            ></span>
+          </div>
+          <div>
+            <p>+7 (391) 209 57-57</p>
+          </div>
+        </div>
+        <div class="navbar-contacts__item">
+          <div>
+            <span
+              class="svg"
+              v-html="navIcons['phone']"
+            ></span>
+          </div>
+          <div>
+            <p>+7 (391) 215 54-33</p>
+          </div>
+        </div>
+        <div class="navbar-contacts__item">
+          <div>
+            <span
+              class="svg"
+              v-html="navIcons['email']"
+            ></span>
+          </div>
+          <div>
+            <p>los-bio@mail.ru</p>
+          </div>
+        </div>
+        <div class="navbar-contacts__item">
+          <div>
+            <span
+              class="svg"
+              v-html="navIcons['back']"
+            ></span>
+          </div>
+          <div>
+            <p>Заказать звонок</p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="navbar-body">
+      <div class="navbar-body">
+        <div class="navbar-body__logo">
+          <span
+            v-html="mainLogo['logo']"
+          ></span>
+        </div>
+        <div class="navbar-body__items">
+          <div>
+            <p>О компании</p>
+          </div>
+          <div>
+            <p>Проекты</p>
+          </div>
+          <div>
+            <div>
+              <p>Каталог</p>
+            </div>
+            <span
 
-    </div>
+            ></span>
+          </div>
+          <div>
+            <p>Контакты</p>
+          </div>
+        </div>
+        <div class="navbar-body__consultation">
 
+        </div>
+      </div>
     </div>
 
 
@@ -51,7 +121,11 @@ import { navIcons } from '~/components/shared/icons/navIcons';
 }
 
 .navbar-contacts {
-
+  display: flex;
+  padding: 0px 135px;
+  justify-content: space-between;
+  border: 1px solid #FFFFFF26;
+  height: 42px;
 }
 
 .navbar-contacts__item {
