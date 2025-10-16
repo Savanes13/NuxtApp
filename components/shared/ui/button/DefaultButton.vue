@@ -22,7 +22,8 @@
   width: 100%;
   height: 100%;
   transition: background-color transition.$medium;
-  cursor: pointer
+  cursor: pointer;
+  user-select: none;
 }
 
 .button:hover {

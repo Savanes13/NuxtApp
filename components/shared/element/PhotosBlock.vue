@@ -9,20 +9,13 @@ interface IPhoto {
   project_files?: Record<string, any>
 }
 
-const props = defineProps<{ photos: IPhoto[] }>()
-
-// текущий индекс выбранной (по-умолчанию 0)
+const props = defineProps<{
+  photos: IPhoto[];
+}>();
 const current = ref(0)
-
-// безопасный список (если props.photos может быть null/undefined)
 const photos = computed(() => props.photos || [])
-
-// сформировать полный URL к файлу
 const fileUrl = (p: IPhoto) => `https://api.los-bio.ru/files/${p.catalog}/${p.name}`
-
-// основной фото-объект
 const mainPhoto = computed(() => photos.value[current.value])
-
 const nextImage = () => {
   if (!photos.value.length) return
   current.value = (current.value + 1) % photos.value.length
@@ -39,16 +32,10 @@ const nextImage = () => {
         class="gallery__img"
         loading="lazy"
       />
-       <div 
-        class="button-next"
-        @click="nextImage"
-       >
-         <DefaultButton>
-          Следующее фото
-         </DefaultButton>
-       </div>
+      <div class="button-next" @click="nextImage">
+        <DefaultButton>Следующее фото</DefaultButton>
+      </div>
     </div>
-
     <div class="gallery__thumbs">
       <div
         v-for="(p, i) in photos"
@@ -63,94 +50,75 @@ const nextImage = () => {
   </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
+@use "@/style/variables/color.scss" as color;
+
 .gallery {
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
+}
 
-  .gallery__main {
-    position: relative;
-    display: flex;
-    justify-content: center;
+.gallery__main {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
 
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+.gallery__img {
+  width: 100%;
+  max-width: 900px;
+  height: 480px;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
 
+.button-next {
+  position: absolute;
+  bottom: 5px;
+  right: 2px;
+  z-index: 2;
+}
 
-    .gallery__img {
-      width: 100%;
-      max-width: 900px;
-      height: 480px;       /* фиксированная высота */
-      object-fit: cover;    /* масштабирование с обрезкой */
-      // border-radius: 6px;
-      background: #fff;
-    }
+.button-next .button {
+  width: 156px;
+  height: 36px;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 141%;
+}
 
-    /* Кнопка "Вперёд" поверх картинки */
-    .button-next {
-      position: absolute;
-      bottom: 5px;
-      right: 2px;
-      transform: translateY(-50%);
+.gallery__thumbs {
+  display: flex;
+  overflow-x: auto;
+  padding-bottom: 6px;
+}
 
-      // width: 40px;
-      // height: 40px;
-      // border-radius: 50%;
-      // background: rgba(0, 123, 255, 0.7);
-      // color: #fff;
-      // border: none;
-      // cursor: pointer;
-      // font-size: 22px;
-      // display: flex;
-      // align-items: center;
-      // justify-content: center;
-      z-index: 2;
-    }
+.thumb {
+  flex: 0 0 auto;
+  width: 88px;
+  height: 60px;
+  overflow: hidden;
+  cursor: pointer;
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+}
 
-    .button-next .button {
-      width: 156px;
-      height: 36px;
-      border-radius: 4px;
-      font-weight: 500;
-      font-size: 14px;
-      line-height: 141%;
-    }
-  }
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
-  .gallery__thumbs {
-    margin-top: 12px;
-    display: flex;
-    gap: 8px;
-    overflow-x: auto;
-    padding-bottom: 6px;
+.thumb--active {
+  border-color: color.$main_blue;
+  box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.12);
+}
 
-    .thumb {
-      flex: 0 0 auto;
-      width: 88px;
-      height: 60px;
-      border-radius: 6px;
-      overflow: hidden;
-      cursor: pointer;
-      border: 2px solid transparent;
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-      }
-    }
-
-    .thumb--active {
-      border-color: #007bff;
-      box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.12);
-    }
-  }
-
-  /* небольшой отклик при клике */
-  .thumb:active {
-    transform: scale(0.98);
-  }
+.thumb:active {
+  transform: scale(0.98);
 }
 </style>
