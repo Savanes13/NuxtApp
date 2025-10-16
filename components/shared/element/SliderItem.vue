@@ -21,13 +21,13 @@ const {
 <template>
   <div class="slider-item">
     <div class="slider-item__left-block">
-      <div>
+      <div class="title">
         <p>{{ title }}</p>
       </div>
-      <div>
+      <div class="text">
         <p>{{ text }}</p>
       </div>
-      <div>
+      <div class="button-catalog">
         <DefaultButton>
           {{ btnText }}
         </DefaultButton>
@@ -40,7 +40,47 @@ const {
 </template>
 
 <style lang="scss" scoped>
+@use "@/style/variables/color.scss" as color;
+
 .slider-item {
-  color: white;
+  display: flex;
+  justify-content: space-between;
+  // align-items: center;
+
+  height: 530px;
+}
+
+.slider-item__left-block {
+  width: 577px;
+}
+
+.slider-item__right-block img{
+  height: 480px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 100%;
+  color: color.$main_white;
+  margin-bottom: 30px;
+}
+
+.text {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 150%;
+  color: color.$main_white;
+  margin-bottom: 80px;
+}
+
+.button-catalog .button {
+  width: 238px;
+  height: 57px;
+  border-radius: 12px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 141%;
+  color: color.$main_white;
 }
 </style>

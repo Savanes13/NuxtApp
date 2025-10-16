@@ -46,6 +46,18 @@ getSlider();
     class="index-page"
     v-if="dataAdvantagesArray && dataSliderArray"
   >
+
+    <div class="index-page__slider-block">
+      <SliderItem
+        v-for="item in dataSliderArray"
+        :key="item.id"
+        :image="item.image[0]?.name || ''"
+        :title="item.title"
+        :text="item.description"
+        :btn-text="item.btnText"
+        :catalog="item.image[0]?.catalog || ''"
+      />
+    </div>
     
     <div class="index-page__advantages-block">
       <div class="title-advantages">
@@ -62,15 +74,6 @@ getSlider();
       </div>
     </div>
 
-    <SliderItem
-      v-for="item in dataSliderArray"
-      :key="item.id"
-      :image="item.image[0]?.name || ''"
-      :title="item.title"
-      :text="item.description"
-      :btn-text="item.btnText"
-      :catalog="item.image[0]?.catalog || ''"
-    />
   </div>
 </template>
 
