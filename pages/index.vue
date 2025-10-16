@@ -4,6 +4,11 @@ import SliderItem from '~/components/shared/element/SliderItem.vue';
 import { getAdvantageData, getSliderData } from '~/api/pages/index/apiIndex';
 import type { TAdvantagesArray } from '~/types/pages/index/typesIndex';
 import type { TSlidesArray } from '~/types/pages/index/typesIndex';
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import { Pagination, Autoplay } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/pagination'
+import 'swiper/css/autoplay'
 
 const dataSliderArray = ref<TSlidesArray | null>(null);
 const dataAdvantagesArray = ref<TAdvantagesArray | null>(null);
@@ -46,19 +51,29 @@ getSlider();
     class="index-page"
     v-if="dataAdvantagesArray && dataSliderArray"
   >
-
     <div class="index-page__slider-block">
-      <SliderItem
-        v-for="item in dataSliderArray"
-        :key="item.id"
-        :image="item.image[0]?.name || ''"
-        :title="item.title"
-        :text="item.description"
-        :btn-text="item.btnText"
-        :catalog="item.image[0]?.catalog || ''"
-      />
+      <Swiper
+        :modules="[Pagination, Autoplay]"        
+        :space-between="32"
+        :slides-per-view="1"
+        :loop="true"
+        :pagination="{ clickable: true }"       
+        class="index-page__swiper"
+      >
+        <SwiperSlide
+          v-for="item in dataSliderArray"
+          :key="item.id"
+        >
+          <SliderItem
+            :image="item.image[0]?.name || ''"
+            :title="item.title"
+            :text="item.description"
+            :btn-text="item.btnText"
+            :catalog="item.image[0]?.catalog || ''"
+          />
+        </SwiperSlide>
+      </Swiper>
     </div>
-    
     <div class="index-page__advantages-block">
       <div class="title-advantages">
         <p>Наши преимущества</p>
@@ -73,12 +88,16 @@ getSlider();
         />
       </div>
     </div>
-
   </div>
 </template>
 
 <style lang="scss" scoped>
 @use "@/style/variables/color.scss" as color;
+
+.index-page__slider-block {
+  margin-top: 80px;
+  margin-bottom: 147px;
+}
 
 .index-page__advantages-block {
   margin-bottom: 147px;
@@ -96,5 +115,17 @@ getSlider();
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 32px;
+}
+
+:global(.swiper-pagination-bullet) {
+  width: 18px;
+  height: 18px;
+  background: #FFFFFF0D;
+}
+
+:global(.swiper-pagination-bullet-active) {
+  width: 18px;
+  height: 18px;
+  background: color.$main_blue;
 }
 </style>
