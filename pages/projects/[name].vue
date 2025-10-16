@@ -46,9 +46,53 @@ getProjectDataArr();
       :data="breadCrumb"
     />
     <div class="project-page__content">
-      <div lang="info-block">
-        <div>
+      <div class="info-block">
+        <div class="info-block__title"> 
           <p>{{ dataProjectArray.title }}</p>
+        </div>
+
+        <div class="info-block__customer-selection">
+          <div class="selection-title">
+            <p>Почему клиенты выбирают ЛОС:</p>
+          </div>
+          <div class="selection-items">
+            <div class="selection-items__item">
+              <div class="circle"></div>
+              <div>
+                <p>Срок службы <span>50 лет</span></p>
+              </div>
+            </div>
+            <div class="selection-items__item">
+              <div class="circle"></div>
+              <div>
+                <p>Монтаж <span>за 1 день</span></p>
+              </div>
+            </div>
+            <div class="selection-items__item">
+              <div class="circle"></div>
+              <div>
+                <p>Производительность <span>до 15 человек</span></p>
+              </div>
+            </div>
+            <div class="selection-items__item">
+              <div class="circle"></div>
+              <div>
+                <p>Устойчивость <span>к залповым сбросам</span></p>
+              </div>
+            </div>
+            <div class="selection-items__item">
+              <div class="circle"></div>
+              <div>
+                <p><span>Отказ </span>от ассенизационной машины</p>
+              </div>
+            </div>
+            <div class="selection-items__item">
+              <div class="circle"></div>
+              <div>
+                <p>Работает <span>при отключенной электроэнергии</span></p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -57,20 +101,76 @@ getProjectDataArr();
           :photos="dataProjectArray.photos"
         />
       </div>
-
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped> 
+@use "@/style/variables/color.scss" as color;
+
 .bread-crumbs {
   margin-top: 13px;
   margin-bottom: 37px;
 }
 
-.info-block {
-  background: #1215237D;
+.project-page__content {
+  display: flex;
+  gap: 41px;
+}
 
+.info-block {
+  flex: 60;
+  background: #1215237D;
+  border-radius: 19px;
   padding: 30px 40px 52px 40px;
+  border: 1px solid #494b57;
+}
+
+.image-block {
+  flex: 40;
+}
+
+.info-block__title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 150%;
+  color: color.$main_white;
+  margin-bottom: 12px;
+}
+
+.selection-title {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 150%;
+  color: #FFFFFFCC;
+  margin-bottom: 19px;
+}
+
+.selection-items {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.selection-items__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 160%;
+  color: color.$main_white;
+}
+
+.selection-items__item span{
+  font-weight: 700;
+}
+
+.circle {
+  width: 12px;
+  height: 12px;
+  border: 2px solid color.$main_blue;
+  border-radius: 50%;  
+  background: transparent;
 }
 </style>
