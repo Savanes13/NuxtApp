@@ -111,7 +111,6 @@ import { navIcons } from '~/components/shared/icons/navIcons';
     </div>
 
     <div class="layout__footer">
-
       <div class="footer-block">
         <div class="footer-block__logo">
           <span
@@ -135,9 +134,24 @@ import { navIcons } from '~/components/shared/icons/navIcons';
           </div>
         </div>
       </div>
-
       <div class="footer-block">
-        
+        <div class="footer-block__company-title">
+          <p>Компания</p>
+        </div>
+        <div class="footer-block__pages-items">
+          <div>
+            <p>О компании</p>
+          </div>
+          <div>
+            <p>Проекты</p>
+          </div>
+          <div>
+            <p>Каталог</p>
+          </div>
+          <div>
+            <p>Контакты</p>
+          </div>
+        </div>
       </div>
       <div class="footer-block">
         
@@ -230,6 +244,8 @@ position: relative;
   flex: 0 0 auto;
   margin-top: auto;
   padding: 89px 135px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .footer-block__logo {
@@ -261,6 +277,28 @@ position: relative;
   font-size: 14px;
   line-height: 164%;
   color: #FFFFFF54;
+}
+
+.footer-block__company-title {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 141%;
+  color: color.$main_white;
+  margin-bottom: 20px;
+}
+
+.footer-block__pages-items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer-block__pages-items div {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 141%;
+  color: color.$main_white;
+  cursor: pointer;
 }
 
 
