@@ -93,7 +93,23 @@ const nextImage = () => {
 .gallery__thumbs {
   display: flex;
   overflow-x: auto;
-  padding-bottom: 6px;
+}
+
+.gallery__thumbs::-webkit-scrollbar {
+  width: 6px !important;
+  cursor: default !important;
+}
+
+.gallery__thumbs::-webkit-scrollbar-track {
+  background: #FFFFFFCC;
+  overflow: hidden;
+  cursor: default !important;
+}
+
+.gallery__thumbs::-webkit-scrollbar-thumb {
+  background-color: color.$main_blue;
+  border-radius: 3px;
+  cursor: default !important;
 }
 
 .thumb {
