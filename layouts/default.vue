@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import DefaultButton from '~/components/shared/ui/button/DefaultButton.vue';
-
 import { mainIcons } from '~/components/shared/icons/mainIcons';
 import { mainLogo } from '~/components/shared/icons/mainLogo';
 import { navIcons } from '~/components/shared/icons/navIcons';
@@ -69,9 +68,11 @@ import { navIcons } from '~/components/shared/icons/navIcons';
 
       <div class="navbar-body">
         <div class="navbar-body__logo">
-          <span
-            v-html="mainLogo['logo']"
-          ></span>
+          <NuxtLink to="/">
+            <span
+              v-html="mainLogo['logo']"
+            ></span>
+          </NuxtLink>
         </div>
         <div class="navbar-body__items">
           <div class="page-item">
@@ -108,9 +109,11 @@ import { navIcons } from '~/components/shared/icons/navIcons';
     <div class="layout__footer">
       <div class="footer-block">
         <div class="footer-block__logo">
-          <span
-            v-html="mainLogo['logo']"
-          ></span>
+          <NuxtLink to="/">
+            <span
+              v-html="mainLogo['logo']"
+            ></span>
+          </NuxtLink>
         </div>
         <div class="name-company">
           <p>ООО «ТОРГОВЫЙ ДОМ «ЛОС-БИО»</p>
@@ -170,7 +173,6 @@ import { navIcons } from '~/components/shared/icons/navIcons';
           </div>
         </div>
       </div>
-
       <div class="footer-block">
         <div class="footer-block__title">
           <p>Контакты</p>
@@ -237,12 +239,8 @@ import { navIcons } from '~/components/shared/icons/navIcons';
 .layout {
   display: flex;
   flex-direction: column;
-min-height: 100dvh;
-position: relative;
-}
-
-.layout__navbar {
-
+  min-height: 100dvh;
+  position: relative;
 }
 
 .navbar-contacts {
@@ -300,11 +298,6 @@ position: relative;
 .layout__slot {
   margin: 0px 135px;
 }
-
-
-
-
-
 
 .layout__footer {
   background: linear-gradient(187.91deg, #090B1A 10.06%, #060B17 90.18%);
@@ -396,7 +389,6 @@ position: relative;
   height: 36px;
   border-radius: 4px;
 }
-
 
 .svg {
   display: flex;

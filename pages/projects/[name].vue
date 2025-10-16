@@ -47,7 +47,9 @@ getProjectDataArr();
     />
     <div class="project-page__content">
       <div lang="info-block">
-
+        <div>
+          <p>{{ dataProjectArray.title }}</p>
+        </div>
       </div>
 
       <div class="image-block">
@@ -64,5 +66,11 @@ getProjectDataArr();
 .bread-crumbs {
   margin-top: 13px;
   margin-bottom: 37px;
+}
+
+.info-block {
+  background: #1215237D;
+
+  padding: 30px 40px 52px 40px;
 }
 </style>

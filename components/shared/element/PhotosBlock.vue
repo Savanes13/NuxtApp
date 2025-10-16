@@ -12,6 +12,7 @@ interface IPhoto {
 const props = defineProps<{
   photos: IPhoto[];
 }>();
+
 const current = ref(0)
 const photos = computed(() => props.photos || [])
 const fileUrl = (p: IPhoto) => `https://api.los-bio.ru/files/${p.catalog}/${p.name}`
