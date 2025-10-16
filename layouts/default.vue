@@ -121,6 +121,7 @@ import { navIcons } from '~/components/shared/icons/navIcons';
 }
 
 .navbar-contacts {
+  opacity: 50%;
   display: flex;
   padding: 0px 135px;
   justify-content: space-between;
@@ -129,6 +130,7 @@ import { navIcons } from '~/components/shared/icons/navIcons';
 }
 
 .navbar-contacts__item {
+  font-weight: 00;
   display: flex;
   align-items: center;
   gap: 3px;
