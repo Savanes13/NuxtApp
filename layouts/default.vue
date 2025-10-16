@@ -154,7 +154,26 @@ import { navIcons } from '~/components/shared/icons/navIcons';
         </div>
       </div>
       <div class="footer-block">
-        
+        <div class="footer-block__company-title">
+          <p>Каталог</p>
+        </div>
+        <div class="footer-block__pages-items">
+          <div>
+            <p>КНС</p>
+          </div>
+          <div>
+            <p>Ёмкости</p>
+          </div>
+          <div>
+            <p>Ливневые очистные-сооружения</p>
+          </div>
+          <div>
+            <p>Хозяйственно-бытовые очистные сооружения</p>
+          </div>
+          <div>
+            <p>Комплектующие</p>
+          </div>
+        </div>
       </div>
       <div class="footer-block">
         
@@ -291,6 +310,7 @@ position: relative;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  max-width: 179px;
 }
 
 .footer-block__pages-items div {
