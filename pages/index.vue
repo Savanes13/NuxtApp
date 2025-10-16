@@ -1,14 +1,9 @@
 <script lang="ts" setup>
 import AdvantagesBlock from '~/components/shared/element/AdvantagesBlock.vue';
-import SliderItem from '~/components/shared/element/SliderItem.vue';
+import MainSlider from '~/components/shared/element/MainSlider.vue';
 import { getAdvantageData, getProjectsData, getSliderData } from '~/api/pages/index/apiIndex';
 import type { TAdvantagesArray } from '~/types/pages/index/typesIndex';
 import type { TSlidesArray } from '~/types/pages/index/typesIndex';
-import { Swiper, SwiperSlide } from 'swiper/vue'
-import { Pagination, Autoplay } from 'swiper/modules'
-import 'swiper/css'
-import 'swiper/css/pagination'
-import 'swiper/css/autoplay'
 
 const dataSliderArray = ref<TSlidesArray | null>(null);
 const dataAdvantagesArray = ref<TAdvantagesArray | null>(null);
@@ -63,27 +58,9 @@ getProject();
     v-if="dataAdvantagesArray && dataSliderArray"
   >
     <div class="index-page__slider-block">
-      <Swiper
-        :modules="[Pagination, Autoplay]"        
-        :space-between="32"
-        :slides-per-view="1"
-        :loop="true"
-        :pagination="{ clickable: true }"       
-        class="index-page__swiper"
-      >
-        <SwiperSlide
-          v-for="item in dataSliderArray"
-          :key="item.id"
-        >
-          <SliderItem
-            :image="item.image[0]?.name || ''"
-            :title="item.title"
-            :text="item.description"
-            :btn-text="item.btnText"
-            :catalog="item.image[0]?.catalog || ''"
-          />
-        </SwiperSlide>
-      </Swiper>
+      <MainSlider
+        :data="dataSliderArray"
+      />
     </div>
     <div class="index-page__advantages-block">
       <div class="title-advantages">
