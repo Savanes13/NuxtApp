@@ -5,7 +5,6 @@ import { getProjectData } from '~/api/pages/project/apiProject';
 
 const route = useRoute();
 const slug = route.params.name as string;
-//типизировать
 const dataProjectArray = ref<any | null>(null);
 
 const breadCrumb = computed(() => [
@@ -280,6 +279,28 @@ getProjectDataArr();
 }
 
 @media (max-width: 375px) {
-  
+  .info-block__title {
+    font-size: 22px
+  }
+
+  .selection-items__item {
+    font-size: 14px;
+  }
+
+  .advantages-сompany__title {
+    font-size: 14px;
+  }
+
+  .advantages-сompany__text {
+    font-size: 14px;
+  }
+
+  .circle-number[data-v-83e1a06d] {
+    flex: 0 0 20px;
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
+    line-height: 16px;
+  }
 }
 </style>

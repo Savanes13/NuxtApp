@@ -840,7 +840,7 @@ const toggleBurger = () => {
   }
 
   .layout__footer {
-    padding: 50px 16px;
+    padding: 30px 16px;
   }
 }
 </style>
