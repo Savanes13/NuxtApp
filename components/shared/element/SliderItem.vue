@@ -129,4 +129,27 @@ const {
     height: 50px;
   }
 } 
+
+@media (max-width: 700px) {
+  .slider-item__right-block img{
+    width: 280px;
+    height: auto;
+  }
+}
+
+@media (max-width: 375px) {
+  .title {
+    font-size: 22px;
+  }
+
+  .text {
+    font-size: 14px;
+  }
+
+  .button-catalog .button  {
+    font-size: 14px;
+    width: 150px;
+    height: 42px;
+  }
+}
 </style>
