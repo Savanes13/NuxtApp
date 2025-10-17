@@ -228,4 +228,58 @@ getProjectDataArr();
   line-height: 18px;
   color: color.$main_blue;
 }
+
+@media (max-width: 1200px) {
+  .info-block {
+    flex: 50;
+  }
+
+  .image-block {
+    flex: 50;
+  }
+}
+
+@media (max-width: 991px) {
+  .project-page__content {
+    flex-direction: column-reverse;
+  }
+}
+
+@media (max-width: 768px) {
+  .info-block__title {
+    font-size: 26px;
+  }
+
+  .info-block__descripton {
+    font-size: 16px;
+  }
+
+  .selection-items--advanced {
+    gap: 10px;
+  }
+
+  .selection-title {
+    font-size: 16px;
+  }
+
+  .selection-items__item {
+    font-size: 16px;
+  }
+
+  .advantages-сompany__title {
+    font-size: 16px;
+  }
+
+  .advantages-сompany__text {
+    font-size: 16px;
+  }
+
+  .info-block {
+    padding: 20px
+  }
+}
+
+@media (max-width: 375px) {
+  
+}
 </style>

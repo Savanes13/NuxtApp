@@ -56,6 +56,12 @@ const {
   a {
     color: #FFFFFF21 !important;
   }
+  display: inline-block; 
+  max-width: 200px;       
+  white-space: nowrap;     
+  overflow: hidden;       
+  text-overflow: ellipsis;  
+  vertical-align: middle;
 }
 
 .name {
@@ -70,5 +76,14 @@ const {
   border-radius: 50px;
   background: color.$main_blue;
   margin: 0 10px;
+}
+
+@media (max-width: 375px) {
+  .bread-crumbs {
+    gap: 3px;
+  }
+  .name {
+    gap: 4px; 
+  }
 }
 </style>

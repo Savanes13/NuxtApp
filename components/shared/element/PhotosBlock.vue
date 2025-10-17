@@ -56,7 +56,7 @@ const nextImage = () => {
 
 .gallery {
   width: 100%;
-  max-width: 900px;
+  // max-width: 900px;
   margin: 0 auto;
 }
 
@@ -68,7 +68,7 @@ const nextImage = () => {
 
 .gallery__img {
   width: 100%;
-  max-width: 900px;
+  // max-width: 900px;
   height: 480px;
   object-fit: cover;
   border-top-left-radius: 10px;
@@ -109,7 +109,6 @@ const nextImage = () => {
 
 .gallery__thumbs::-webkit-scrollbar-thumb {
   background-color: color.$main_blue;
-  border-radius: 3px;
   cursor: default !important;
 }
 
@@ -137,5 +136,33 @@ const nextImage = () => {
 
 .thumb:active {
   transform: scale(0.98);
+}
+
+@media (max-width: 1400px) {
+  .thumb {
+    flex: 0 0 auto; 
+    width: 20%; 
+    height: auto;
+  }
+}
+
+@media (max-width: 991px) {
+  .thumb {
+    height: 80px;
+  }
+
+  .gallery__thumbs::-webkit-scrollbar {
+    height: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery__img {
+    height: 300px;
+  }
+
+  .thumb {
+    height: 60px;
+  }
 }
 </style>
