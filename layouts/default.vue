@@ -75,8 +75,14 @@ const toggleBurger = () => {
         <div class="navbar-body__logo">
           <NuxtLink to="/">
             <span
-              class="main-logo"
+              class="main-logo main-logo--desktop"
               v-html="mainLogo['logo']"
+            ></span>
+          </NuxtLink>
+          <NuxtLink to="/">
+            <span
+              class="main-logo main-logo--mobile"
+              v-html="mainLogo['smallLogo']"
             ></span>
           </NuxtLink>
         </div>
@@ -126,8 +132,14 @@ const toggleBurger = () => {
         <div class="footer-block__logo">
           <NuxtLink to="/">
             <span
-              class="main-logo"
+              class="main-logo main-logo--desktop"
               v-html="mainLogo['logo']"
+            ></span>
+          </NuxtLink>
+          <NuxtLink to="/">
+            <span
+              class="main-logo main-logo--mobile"
+              v-html="mainLogo['smallLogo']"
             ></span>
           </NuxtLink>
         </div>
@@ -454,6 +466,10 @@ const toggleBurger = () => {
   transform: rotate(-45deg);
 }
 
+.main-logo--mobile {
+  display: none;
+}
+
 .svg {
   display: flex;
   align-items: center;
@@ -511,8 +527,12 @@ const toggleBurger = () => {
     height: 76px;
   }
 
-  .main-logo ::v-deep svg {
-    width: 150px;
+  .main-logo--desktop {
+    display: none;
+  }
+
+  .main-logo--mobile {
+    display: block;
   }
 }
 
@@ -523,6 +543,7 @@ const toggleBurger = () => {
 
   .navbar-body {
     padding: 0px 30px;
+    border: 1px solid #FFFFFF26;
   }
 
   .navbar-contacts {
@@ -531,6 +552,10 @@ const toggleBurger = () => {
 
   .layout__footer {
     padding: 70px 30px;
+  }
+
+  .navbar-contacts {
+    display: none;
   }
 
   .navbar-body__consultation {
