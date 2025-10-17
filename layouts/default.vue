@@ -397,4 +397,22 @@ import { navIcons } from '~/components/shared/icons/navIcons';
   width: 100%;
   height: 100%;
 }
+
+@media(max-width: 1200px) {
+  .layout__slot {
+    margin: 0px 70px;
+  }
+
+  .navbar-body {
+    padding: 0px 70px;
+  }
+
+  .navbar-contacts {
+    padding: 0px 70px;
+  }
+
+  .layout__footer {
+    padding: 89px 70px;
+  }
+}
 </style>
