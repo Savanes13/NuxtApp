@@ -231,7 +231,7 @@ const toggleBurger = () => {
           </NuxtLink>
           <NuxtLink to="/">
             <span
-              class="main-logo main-logo--mobile"
+              class="main-logo main-logo--mobile main-logo--mobile--footer"
               v-html="mainLogo['smallLogo']"
             ></span>
           </NuxtLink>
@@ -749,7 +749,7 @@ const toggleBurger = () => {
     gap: 8px;
   }
 
-  .main-logo--mobile {
+  .main-logo--mobile--footer {
     margin-top: 24px;
   }
 
