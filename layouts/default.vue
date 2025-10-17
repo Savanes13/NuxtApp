@@ -70,6 +70,7 @@ import { navIcons } from '~/components/shared/icons/navIcons';
         <div class="navbar-body__logo">
           <NuxtLink to="/">
             <span
+              class="main-logo"
               v-html="mainLogo['logo']"
             ></span>
           </NuxtLink>
@@ -111,6 +112,7 @@ import { navIcons } from '~/components/shared/icons/navIcons';
         <div class="footer-block__logo">
           <NuxtLink to="/">
             <span
+              class="main-logo"
               v-html="mainLogo['logo']"
             ></span>
           </NuxtLink>
@@ -441,6 +443,14 @@ import { navIcons } from '~/components/shared/icons/navIcons';
   .contacts-svg ::v-deep svg {
     width: 16px;
     height: 16px;
+  }
+
+  .navbar-body {
+    height: 76px;
+  }
+
+  .main-logo ::v-deep svg {
+    width: 150px;
   }
 }
 
