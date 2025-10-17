@@ -56,7 +56,6 @@ const nextImage = () => {
 
 .gallery {
   width: 100%;
-  // max-width: 900px;
   margin: 0 auto;
 }
 
@@ -68,7 +67,6 @@ const nextImage = () => {
 
 .gallery__img {
   width: 100%;
-  // max-width: 900px;
   height: 480px;
   object-fit: cover;
   border-top-left-radius: 10px;
