@@ -60,45 +60,19 @@ getProjectDataArr();
             <p>Почему клиенты выбирают ЛОС:</p>
           </div>
           <div class="selection-items">
-            <div class="selection-items__item">
+            <div 
+              class="selection-items__item"
+              v-if="dataProjectArray?.short_description?.blocks?.length"
+              v-for="item in dataProjectArray.short_description.blocks"
+              :key="item.id"
+            >
               <div class="circle"></div>
               <div>
-                <p>Срок службы <span>50 лет</span></p>
-              </div>
-            </div>
-            <div class="selection-items__item">
-              <div class="circle"></div>
-              <div>
-                <p>Монтаж <span>за 1 день</span></p>
-              </div>
-            </div>
-            <div class="selection-items__item">
-              <div class="circle"></div>
-              <div>
-                <p>Производительность <span>до 15 человек</span></p>
-              </div>
-            </div>
-            <div class="selection-items__item">
-              <div class="circle"></div>
-              <div>
-                <p>Устойчивость <span>к залповым сбросам</span></p>
-              </div>
-            </div>
-            <div class="selection-items__item">
-              <div class="circle"></div>
-              <div>
-                <p><span>Отказ </span>от ассенизационной машины</p>
-              </div>
-            </div>
-            <div class="selection-items__item">
-              <div class="circle"></div>
-              <div>
-                <p>Работает <span>при отключенной электроэнергии</span></p>
+                <p>{{ item.data.text }}</p>
               </div>
             </div>
           </div>
         </div>
-
 
 
         <div class="info-block__customer-selection">
@@ -121,8 +95,6 @@ getProjectDataArr();
           </div>
 
         </div>
-
-
 
       </div>
 
@@ -197,7 +169,6 @@ getProjectDataArr();
 
 .selection-items__item {
   display: flex;
-  align-items: center;
   gap: 10px;
   font-weight: 400;
   font-size: 18px;
@@ -229,11 +200,13 @@ getProjectDataArr();
 }
 
 .circle {
+  flex: 0 0 12px;     
   width: 12px;
   height: 12px;
   border: 2px solid color.$main_blue;
   border-radius: 50%;  
   background: transparent;
+  margin-top: 6px;
 }
 
 .circle-number {
