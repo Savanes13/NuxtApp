@@ -3,6 +3,11 @@ import DefaultButton from '~/components/shared/ui/button/DefaultButton.vue';
 import { mainIcons } from '~/components/shared/icons/mainIcons';
 import { mainLogo } from '~/components/shared/icons/mainLogo';
 import { navIcons } from '~/components/shared/icons/navIcons';
+
+const openBurger = ref<boolean>(false);
+const toggleBurger = () => {
+  openBurger.value = !openBurger.value;
+};
 </script>
 
 <template>
@@ -99,6 +104,15 @@ import { navIcons } from '~/components/shared/icons/navIcons';
           <DefaultButton>
             Получить КП
           </DefaultButton>
+        </div>
+        <div 
+          class="burger__button"
+          :class="{ open: openBurger }"
+          @click="toggleBurger"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
       </div>
     </div>
@@ -392,6 +406,54 @@ import { navIcons } from '~/components/shared/icons/navIcons';
   border-radius: 4px;
 }
 
+.burger__button {
+  position: relative;       
+  display: none;                  
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  background: #687a8080;
+  cursor: pointer;
+}
+
+.burger__button span {
+  position: absolute;             
+  left: 15px;               
+  right: 15px;
+  height: 2px;
+  border-radius: 2px;
+  background: color.$main_blue;  
+  transition: transform .3s ease, opacity .2s ease, top .3s ease;
+}
+
+.burger__button span:nth-child(1) { 
+  top: 17px; 
+}
+
+.burger__button span:nth-child(2) { 
+  top: 23px; 
+}
+
+.burger__button span:nth-child(3) { 
+  left: 20px;     
+  top: 29px; 
+}
+
+.burger__button.open span:nth-child(1) {
+  top: 22.5px;
+  transform: rotate(45deg);
+}
+
+.burger__button.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger__button.open span:nth-child(3) {
+  left: 15px;
+  top: 22.5px;
+  transform: rotate(-45deg);
+}
+
 .svg {
   display: flex;
   align-items: center;
@@ -469,6 +531,18 @@ import { navIcons } from '~/components/shared/icons/navIcons';
 
   .layout__footer {
     padding: 70px 30px;
+  }
+
+  .navbar-body__consultation {
+    display: none;
+  }
+
+  .navbar-body__items {
+    display: none;
+  }
+
+  .burger__button  {
+    display: block;
   }
 }
 
