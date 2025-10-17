@@ -12,7 +12,7 @@ import { navIcons } from '~/components/shared/icons/navIcons';
         <div class="navbar-contacts__item">
           <div>
             <span
-              class="svg"
+              class="svg contacts-svg"
               v-html="navIcons['point']"
             ></span>
           </div>
@@ -23,7 +23,7 @@ import { navIcons } from '~/components/shared/icons/navIcons';
         <div class="navbar-contacts__item">
           <div>
             <span
-              class="svg"
+              class="svg contacts-svg"
               v-html="navIcons['phone']"
             ></span>
           </div>
@@ -34,7 +34,7 @@ import { navIcons } from '~/components/shared/icons/navIcons';
         <div class="navbar-contacts__item">
           <div>
             <span
-              class="svg"
+              class="svg contacts-svg"
               v-html="navIcons['phone']"
             ></span>
           </div>
@@ -45,7 +45,7 @@ import { navIcons } from '~/components/shared/icons/navIcons';
         <div class="navbar-contacts__item">
           <div>
             <span
-              class="svg"
+              class="svg contacts-svg"
               v-html="navIcons['email']"
             ></span>
           </div>
@@ -56,7 +56,7 @@ import { navIcons } from '~/components/shared/icons/navIcons';
         <div class="navbar-contacts__item">
           <div>
             <span
-              class="svg"
+              class="svg contacts-svg"
               v-html="navIcons['back']"
             ></span>
           </div>
@@ -400,19 +400,47 @@ import { navIcons } from '~/components/shared/icons/navIcons';
 
 @media (max-width: 1200px) {
   .layout__slot {
-    margin: 0px 70px;
+    margin: 0px 50px;
   }
 
   .navbar-body {
-    padding: 0px 70px;
+    padding: 0px 50px;
   }
 
   .navbar-contacts {
-    padding: 0px 70px;
+    padding: 0px 50px;
   }
 
   .layout__footer {
-    padding: 89px 70px;
+    padding: 89px 50px;
+  }
+  
+  .navbar-body__items {
+    gap: 24px;
+  }
+  
+  .navbar-contacts__item {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 991px) {
+  .page-item {
+    font-size: 15px;
+  }
+
+  .navbar-body__consultation .button {
+    width: 100px;
+    height: 30px;
+  }
+
+  .navbar-contacts__item {
+    font-size: 9px;
+  }
+
+  .contacts-svg ::v-deep svg {
+    width: 16px;
+    height: 16px;
   }
 }
 

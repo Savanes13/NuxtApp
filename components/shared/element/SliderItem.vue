@@ -99,7 +99,7 @@ const {
   }
 } 
 
-@media (max-width: 911px) {
+@media (max-width: 991px) {
   .slider-item {
     flex-direction: column-reverse;
     height: auto;
@@ -130,7 +130,7 @@ const {
   }
 } 
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
   .slider-item__right-block img{
     width: 280px;
     height: auto;
