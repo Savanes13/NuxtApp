@@ -146,10 +146,15 @@ const toggleBurger = () => {
             <div class="page-item">
               <p>Контакты</p>
             </div>
+            <div class="navbar-burger__consultation">
+              <DefaultButton>
+                Получить КП
+              </DefaultButton>
+            </div>
           </div>
           
           <div class="navbar-burger__contacts">
-            <div class="navbar-contacts__item">
+            <div class="navbar-contacts__item navbar-contacts__item--address">
               <div>
                 <span
                   class="svg contacts-svg"
@@ -157,7 +162,7 @@ const toggleBurger = () => {
                 ></span>
               </div>
               <div>
-                <p>г. Красноярск, ул. Телевизорная 1, стр. 14, оф. 204</p>
+                <p>г. Красноярск</p>
               </div>
             </div>
             <div class="navbar-contacts__item">
@@ -577,6 +582,27 @@ const toggleBurger = () => {
   box-shadow: 1px 8px 16px 7px rgba(34, 60, 80, 0.28);
 }
 
+.navbar-burger__items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 30px;
+}
+
+.navbar-burger__contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-right: 30px;
+}
+
+.navbar-burger__consultation .button {
+  margin-top: 14px;
+  width: 160px;
+  height: 40px;
+  border-radius: 8px;
+}
+
 .svg {
   display: flex;
   align-items: center;
@@ -698,14 +724,12 @@ const toggleBurger = () => {
   }
 
   .navbar-burger {
-    display: block;
+    display: flex;
+    justify-content: space-between;
   }
 
-  .navbar-burger__items {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 0px 30px;
+  .navbar-contacts__item {
+    font-size: 16px;
   }
 
   .page-item {
