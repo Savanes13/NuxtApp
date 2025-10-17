@@ -84,11 +84,49 @@ const {
 
 @media (max-width: 1400px) {
   .slider-item__left-block {
-    width: 400px;
+    width: 380px;
   }
 
   .title {
     font-size: 40px;
   }
 }
+
+@media (max-width: 1200px) {
+  .slider-item__right-block img{
+    width: 350px;
+    height: auto;
+  }
+} 
+
+@media (max-width: 911px) {
+  .slider-item {
+    flex-direction: column-reverse;
+    height: auto;
+  }
+
+  .slider-item__left-block {
+    width: 100%;
+  }
+
+  .slider-item__right-block {
+    text-align: center;
+  }
+
+  .title {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+
+  .text {
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
+
+  .button-catalog .button  {
+    font-size: 16px;
+    width: 180px;
+    height: 50px;
+  }
+} 
 </style>
