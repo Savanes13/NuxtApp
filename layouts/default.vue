@@ -398,7 +398,7 @@ import { navIcons } from '~/components/shared/icons/navIcons';
   height: 100%;
 }
 
-@media(max-width: 1200px) {
+@media (max-width: 1200px) {
   .layout__slot {
     margin: 0px 70px;
   }
@@ -413,6 +413,24 @@ import { navIcons } from '~/components/shared/icons/navIcons';
 
   .layout__footer {
     padding: 89px 70px;
+  }
+}
+
+@media (max-width: 768px) {
+  .layout__slot {
+    margin: 0px 30px;
+  }
+
+  .navbar-body {
+    padding: 0px 30px;
+  }
+
+  .navbar-contacts {
+    padding: 0px 30px;
+  }
+
+  .layout__footer {
+    padding: 70px 30px;
   }
 }
 </style>

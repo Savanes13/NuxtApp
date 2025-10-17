@@ -45,8 +45,6 @@ const {
 .slider-item {
   display: flex;
   justify-content: space-between;
-  // align-items: center;
-
   height: 530px;
 }
 
@@ -82,5 +80,15 @@ const {
   font-size: 18px;
   line-height: 141%;
   color: color.$main_white;
+}
+
+@media (max-width: 1400px) {
+  .slider-item__left-block {
+    width: 400px;
+  }
+
+  .title {
+    font-size: 40px;
+  }
 }
 </style>

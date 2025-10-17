@@ -150,4 +150,33 @@ getProject();
   height: 18px;
   background: color.$main_blue;
 }
+
+@media (max-width: 991px) {
+  .title-advantages {
+    margin-bottom: 40px;
+    font-size: 34px;
+  }
+
+  .title-projects {
+    margin-bottom: 40px;
+    font-size: 34px;
+  }
+
+  .items-advantages {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 375px) {
+  .title-advantages {
+    margin-bottom: 24px;
+    font-size: 22px;
+  }
+
+  .title-projects {
+    margin-bottom: 424x;
+    font-size: 22px;
+  }
+}
 </style>
