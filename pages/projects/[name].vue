@@ -33,7 +33,6 @@ const getProjectDataArr = async () => {
   };
 };
 getProjectDataArr();
-
 </script>
 
 <template>
@@ -50,19 +49,19 @@ getProjectDataArr();
         <div class="info-block__title"> 
           <p>{{ dataProjectArray.title }}</p>
         </div>
-
         <div class="info-block__descripton">
           <p>{{ dataProjectArray.equipment }}</p>
         </div>
-
         <div class="info-block__customer-selection">
           <div class="selection-title">
             <p>Почему клиенты выбирают ЛОС:</p>
           </div>
-          <div class="selection-items">
+          <div 
+            class="selection-items"
+            v-if="dataProjectArray?.short_description?.blocks?.length"
+          >
             <div 
               class="selection-items__item"
-              v-if="dataProjectArray?.short_description?.blocks?.length"
               v-for="item in dataProjectArray.short_description.blocks"
               :key="item.id"
             >
@@ -73,31 +72,39 @@ getProjectDataArr();
             </div>
           </div>
         </div>
-
-
         <div class="info-block__customer-selection">
           <div class="selection-title">
             <p>Также лос выбирают за:</p>
           </div>
-
-          <div class="selection-items selection-items--advanced">
-            <div class="selection-items__item-advanced">
-              <div class="circle circle-number">1</div>
-              <div class="advantages-сompany">
-                <div class="advantages-сompany__title">
-                  <p>ЭКОНОМИЧНОСТЬ</p>
-                </div>
-                <div class="advantages-сompany__text">
-                  <p>Приобретая станцию у производителя, вы добьетесь максимальной экономии</p>
-                </div>
+          <div 
+            class="selection-items selection-items--advanced"
+            v-if="dataProjectArray?.description?.blocks?.length"
+          >
+            <div 
+              class="selection-items selection-items--advanced"
+              v-if="dataProjectArray?.description?.blocks?.length"
+            >
+              <div 
+                class="selection-items__item-advanced"
+                v-for="(item, index) in dataProjectArray.description.blocks"
+                :key="index"
+              >
+                <template v-if="item.data.text && item.data.text.trim() !== ''">
+                  <div class="circle circle-number">{{ index + 1 }}</div>
+                  <div class="advantages-сompany">
+                    <div class="advantages-сompany__title">
+                      <p>Преимущество</p>
+                    </div>
+                    <div class="advantages-сompany__text">
+                      <p>{{ item.data.text }}</p>
+                    </div>
+                  </div>
+                </template>
               </div>
             </div>
           </div>
-
         </div>
-
       </div>
-
       <div class="image-block">
         <PhotosBlock
           :photos="dataProjectArray.photos"
