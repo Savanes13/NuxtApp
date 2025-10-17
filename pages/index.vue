@@ -183,14 +183,29 @@ getProject();
   }
 }
 
+@media (max-width: 550px) {
+  .items-projects[data-v-02281a80] {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
 @media (max-width: 375px) {
+  .index-page__advantages-block {
+    margin-bottom: 40px;
+  }
+
+  .index-page__slider-block {
+    margin-top: 24px;
+    margin-bottom: 40px;
+  }
+
   .title-advantages {
     margin-bottom: 24px;
     font-size: 22px;
   }
 
   .title-projects {
-    margin-bottom: 424x;
+    margin-bottom: 24px;
     font-size: 22px;
   }
 }

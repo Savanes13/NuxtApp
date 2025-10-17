@@ -107,4 +107,43 @@ const {
     padding: 24px;
   }
 }
+
+@media (max-width: 700px) {
+  .project-item {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 550px) {
+  .project-item__image img {
+    height: 300px;
+    margin-bottom: 20px;
+  }
+
+  .project-item__number {
+    margin-bottom: 18px;
+  }
+
+  .info-block {
+    padding: 10px 0px;
+  }
+}
+
+@media (max-width: 375px) {
+  .project-item__image img {
+    height: 220px;
+  }
+
+  .project-item__number {
+    font-size: 18px;
+  }
+
+  .project-item__title {
+    font-size: 16px;
+  }
+
+  .info-block__text-field {
+    font-size: 14px;
+  }
+}
 </style>
