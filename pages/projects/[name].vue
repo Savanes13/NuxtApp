@@ -51,6 +51,10 @@ getProjectDataArr();
           <p>{{ dataProjectArray.title }}</p>
         </div>
 
+        <div class="info-block__descripton">
+          <p>{{ dataProjectArray.equipment }}</p>
+        </div>
+
         <div class="info-block__customer-selection">
           <div class="selection-title">
             <p>Почему клиенты выбирают ЛОС:</p>
@@ -162,6 +166,14 @@ getProjectDataArr();
   line-height: 150%;
   color: color.$main_white;
   margin-bottom: 12px;
+}
+
+.info-block__descripton {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  color: #FFFFFFCC;
+  margin-bottom: 24px
 }
 
 .info-block__customer-selection {
