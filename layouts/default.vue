@@ -121,6 +121,94 @@ const toggleBurger = () => {
           <span></span>
         </div>
       </div>
+
+      <transition :name="'fade-slide'" mode="out-in">
+        <div 
+          class="navbar-burger"
+          v-if="openBurger"
+        >
+          <div class="navbar-burger__items">
+            <div class="page-item">
+              <p>О компании</p>
+            </div>
+            <div class="page-item">
+              <p>Проекты</p>
+            </div>
+            <div class="page-item">
+              <div>
+                <p>Каталог</p>
+              </div>
+              <span
+                class="svg"
+                v-html="mainIcons['arrowBottom']"
+              ></span>
+            </div>
+            <div class="page-item">
+              <p>Контакты</p>
+            </div>
+          </div>
+          
+          <div class="navbar-burger__contacts">
+            <div class="navbar-contacts__item">
+              <div>
+                <span
+                  class="svg contacts-svg"
+                  v-html="navIcons['point']"
+                ></span>
+              </div>
+              <div>
+                <p>г. Красноярск, ул. Телевизорная 1, стр. 14, оф. 204</p>
+              </div>
+            </div>
+            <div class="navbar-contacts__item">
+              <div>
+                <span
+                  class="svg contacts-svg"
+                  v-html="navIcons['phone']"
+                ></span>
+              </div>
+              <div>
+                <p>+7 (391) 209 57-57</p>
+              </div>
+            </div>
+            <div class="navbar-contacts__item">
+              <div>
+                <span
+                  class="svg contacts-svg"
+                  v-html="navIcons['phone']"
+                ></span>
+              </div>
+              <div>
+                <p>+7 (391) 215 54-33</p>
+              </div>
+            </div>
+            <div class="navbar-contacts__item">
+              <div>
+                <span
+                  class="svg contacts-svg"
+                  v-html="navIcons['email']"
+                ></span>
+              </div>
+              <div>
+                <p>los-bio@mail.ru</p>
+              </div>
+            </div>
+            <div class="navbar-contacts__item">
+              <div>
+                <span
+                  class="svg contacts-svg"
+                  v-html="navIcons['back']"
+                ></span>
+              </div>
+              <div>
+                <p>Заказать звонок</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </transition>
+
     </div>
 
     <div class="layout__slot">
@@ -263,6 +351,7 @@ const toggleBurger = () => {
 
 <style lang="scss" scoped>
 @use "@/style/variables/color.scss" as color;
+@use "@/style/variables/transition.scss" as transition;
 
 .layout {
   display: flex;
@@ -470,12 +559,50 @@ const toggleBurger = () => {
   display: none;
 }
 
+.navbar-burger {
+  display: none;
+  position: absolute;
+  background: linear-gradient(123.79deg, #00011A 22.27%, #0F0F0F 94.29%);
+  width: 100%;
+  padding: 16px;
+  top: 64px;
+  left: 0px;
+  right: 0px;
+  height: 260px;
+  z-index: 10;
+  border-bottom-right-radius: 16px;
+  border-bottom-left-radius: 16px;
+  -webkit-box-shadow: 1px 8px 16px 7px rgba(34, 60, 80, 0.28);
+  -moz-box-shadow: 1px 8px 16px 7px rgba(34, 60, 80, 0.28);
+  box-shadow: 1px 8px 16px 7px rgba(34, 60, 80, 0.28);
+}
+
 .svg {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 100%;
+}
+
+.fade-slide-enter-active,
+.fade-slide-leave-active {
+  transition: opacity transition.$medium, transform transition.$medium, max-height transition.$medium;
+  overflow: hidden;
+}
+
+.fade-slide-enter-from,
+.fade-slide-leave-to {
+  opacity: 0;
+  transform: translateY(-14px);
+  max-height: 0;
+}
+
+.fade-slide-enter-to,
+.fade-slide-leave-from {
+  opacity: 1;
+  transform: translateY(0);
+  max-height: 500px;        
 }
 
 @media (max-width: 1200px) {
@@ -568,6 +695,23 @@ const toggleBurger = () => {
 
   .burger__button  {
     display: block;
+  }
+
+  .navbar-burger {
+    display: block;
+  }
+
+  .navbar-burger__items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0px 30px;
+  }
+
+  .page-item {
+    width: 120px;
+    align-items: center;
+    font-size: 20px;
   }
 }
 
