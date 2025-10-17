@@ -221,7 +221,7 @@ const toggleBurger = () => {
     </div>
 
     <div class="layout__footer">
-      <div class="footer-block">
+      <div class="footer-block footer-block--logo-block">
         <div class="footer-block__logo">
           <NuxtLink to="/">
             <span
@@ -736,6 +736,62 @@ const toggleBurger = () => {
     width: 120px;
     align-items: center;
     font-size: 20px;
+  }
+
+  .layout__footer {
+    flex-direction: column;
+  }
+
+  .footer-block--logo-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .main-logo--mobile {
+    margin-top: 24px;
+  }
+
+  .footer-block {
+    margin-bottom: 12px;
+  }
+
+  .footer-block__title {
+    margin-bottom: 8px
+  }
+
+  .footer-block__pages-items {
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 100%;
+  }
+
+  .footer-block__contacts {
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 550px) {
+  .footer-block--logo-block {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .footer-block__pages-items {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .footer-block__contacts {
+     flex-direction: column;
+     gap: 6px;
+  }
+
+  .footer-block {
+    margin-bottom: 20px;
   }
 }
 
