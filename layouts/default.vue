@@ -739,6 +739,37 @@ const toggleBurger = () => {
   }
 }
 
+@media (max-width: 450px) {
+  .page-item {
+    font-size: 16px;
+  }
+
+  .navbar-burger__consultation .button {
+    width: 120px;
+    height: 30px;
+  }
+
+  .navbar-burger__items {
+    padding-left: 10px;
+  }
+
+  .navbar-burger__contacts {
+    padding-right: 10px;
+  }
+
+  .navbar-contacts__item {
+    font-size: 14px;
+  }
+
+  .navbar-burger {
+    height: 220px;
+  }
+
+  .navbar-body {
+    padding: 0px 15px
+  }
+}
+
 @media (max-width: 375px) {
   .layout__slot {
     margin: 0px 16px;
