@@ -151,6 +151,21 @@ getProject();
   background: color.$main_blue;
 }
 
+@media (max-width: 1200px) {
+  .items-projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .index-page__advantages-block {
+    margin-bottom: 80px;
+  }
+
+  .index-page__slider-block {
+    margin-top: 50px;
+    margin-bottom: 80px;
+  }
+}
+
 @media (max-width: 991px) {
   .title-advantages {
     margin-bottom: 40px;

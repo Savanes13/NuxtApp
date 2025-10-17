@@ -101,4 +101,10 @@ const {
   line-height: 148%;
   color: #FFFFFFCC;
 }
+
+@media (max-width: 991px) {
+  .project-item {
+    padding: 24px;
+  }
+}
 </style>

@@ -433,4 +433,22 @@ import { navIcons } from '~/components/shared/icons/navIcons';
     padding: 70px 30px;
   }
 }
+
+@media (max-width: 375px) {
+  .layout__slot {
+    margin: 0px 16px;
+  }
+
+  .navbar-body {
+    padding: 0px 16px;
+  }
+
+  .navbar-contacts {
+    padding: 0px 16px;
+  }
+
+  .layout__footer {
+    padding: 50px 16px;
+  }
+}
 </style>
